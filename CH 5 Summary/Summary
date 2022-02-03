@@ -1,1 +1,235 @@
+Chapter 5 Sequences: Strings, Lists, and Files
+5.1 The String Data Type
+•	Text is represented in programs by the string data type.
+•	A string is a sequence of characters. 
+o	Strings can be saved in variables
+o	Here are some examples of the two forms of string literals:
+	>>> str1 = "Hello "
+	>>> str2 = 'spam'
+	>>> print (str1 , str2)
+	Hello spam
+	>>> type (str1)
+	<class 'str'>
+	>>> type (str2)
+	<class 'str'>
+o	Ex of getting strings as inputs
+	>>> firstName = input ( "Please enter your name : ")
+	Please enter your name : John
+	>>> print ( "Hello" , firstName)
+	Hello John
+o	We got strings as input, assign them to variables, and how to print them out.
+•	Indexing is accessing the individual characters that make up the string.
+o	Indexing is used in string expressions to access a specific character position in the string. 
+o	The general form for indexing is <string> [ <expr>] . 
+o	The value of the expression determines which character is selected from the string.
+o	The positions in a string are numbered, starting from the left with 0.
+	 
+	>>> greet = "Hello Bob"
+	>>> greet [0]
+	'H'
+	>>> print (greet [O] , greet [2] , greet [4] )
+	H 1 o
+	>>> X = 8
+	>>> print (greet [x-2] )
+	B
+o	Notice that in a string of n characters, the last character is at position n- 1, because the indexes start at 0.
+o	In the interactions above, the Python shell shows us the value of strings by putting them in single quotes; that's Python's way of communicating to us that we are looking at a string object.
+o	When we actually print the string, Python does not put any quotes around the sequence of characters. We just get the text contained in the string.
+o	Python also allows indexing from the right end of a string using negative indexes.
+	>>> greet [ -1]
+	'b'
+•	This helps with getting the last value of a string.
+o	Indexing returns a string containing a single character from a larger string. 
+	Slicing allows access to a contiguous sequence of characters or substring from a string.
+•	slicing is a way of indexing a range of positions in the string.
+•	Slicing takes the form <string> [<start>: <end>].
+o	Start and end are int expressions
+•	A slice produces the substring starting at the position given by start and running up to, but not including, position end. 
+o	>>> greet [0 : 3]
+o	'Hel'
+o	>>> greet [5 : 9]
+o	' Bob'
+o	>>> greet [:5]
+o	'Hello'
+o	>>> greet [5 :]
+o	' Bob'
+o	>>> greet [:]
+o	'Hello Bob'
+o	Concatenation (+) builds a string by "gluing" two strings together. 
+o	Repetition (*) builds a string by multiple concatenations of a string with itself.
+o	len tells how many characters are in a string.
+	>>> " spam" + "eggs "
+	'spameggs'
+	>>> "Spam" + "And" + "Eggs "
+	' SpamAndEggs '
+	>>> 3 * " spam"
+	'spamspamspam'
+	>>> " spam" * 5
+	'spamspamspamspamspam'
+	>>> (3 * " spam" ) + ( " eggs " * 5)
+	'spamspamspameggseggseggseggseggs'
+	>>> len("spam")
+	4
+	>>> len(" SpamAndEggs ")
+	11
+	>>> for ch in "Spam ! ":
+	print (ch, end=" ")
+	S p am !
+•	 
+5.2 Simple String Processing
+•	Putting the newline character (\n) at the end of the string in the first print statement caused the output to skip down an extra line.
+o	# username . py
+o	# Simple string processing program to generate usernames .
+o	def main():
+o	print ( "This program generates computer usernames . \n")
+o	# get user's first and last names
+o	first = input ( "Please enter your first name (all lowercase): ")
+o	last = input ( "Please enter your last name (all lowercase): ")
+o	# concatenate first initial with 7 chars of the last name .
+o	uname = first [O] + last [: 7]
+o	# output the username
+o	print ( "Your username is:", uname)
+o	main()
+5.3 Lists as Sequences
+•	Python lists are also a kind of sequence. That means we can also index, slice, and concatenate lists
+o	>>> [1 , 2] + [3 , 4]
+o	[1' 2' 3' 4]
+o	>>> [1 , 2] *3
+o	[ 1 ' 2 ' 1 ' 2 ' 1 ' 2]
+o	5.3. Lists as Sequences
+o	>>> grades = ['A', 'B','C', 'D' , 'F']
+o	>>> grades [O]
+o	'A'
+o	>>> grades [2 : 4]
+o	['C' , 'D']
+o	>>> len(grades)
+o	5
+•	Strings are always sequences of characters.
+•	You can create a list of numbers or a list of strings or both
+•	Lists, just like strings, are indexed starting with 0, so in this list the value months [0] is the string "Jan".
+o	The nth month is at position n-1.
+•	While strings and lists are both sequences, there is an important difference between the two.
+•	Lists are mutable. 
+o	That means that the value of an item in a list can be modified with an assignment statement. 
+•	Strings, on the other hand, cannot be changed "in place."
+o	>>> myList = [34 , 26 , 15 , 10]
+o	>>> myList [2]
+o	15
+o	>>> myList [2] - 0
+o	>>> myList
+o	[34 , 26 , 0, 10]
+o	>>> myString = "Hello World"
+o	>>> myString [2]
+o	'1'
+o	>>> myString [2] = 'z'
+o	Traceback (most recent call last) :
+o	File "<stdin>" , line 1, in <module >
+o	TypeError: 'str' object does not support item assignment
+5.4 String Representation and Message Encoding
+5.4.1 String Representation
+•	computer systems today use industry standard encodings to ensure that files are read the same.
+•	Unicode, is a much larger standard that aims to include the characters of nearly all written languages. 
+o	Python strings support the Unicode Standard, so you can wrangle characters from any language
+•	ord function returns the numeric ("ordinal") code of a single character string. 
+•	chr function goes the other direction
+o	 
+•	The smallest addressable piece is typically 8 bits, which is called a byte of memory. 
+o	A single byte can store 2^8 = 256 different values.
+5.4.2 Programming an Encoder
+•	Using the Python ord and chr functions, we can write some simple programs that automate the process of turning messages into sequences of numbers and back again.
+o	First we get the message
+	message = input ( "Please enter the message to encode : ")
+o	next we can use a for loop to run through all the characters of the message:
+	for ch in message:
+•	# text2numbers . py
+•	# A program to convert a textual message into a sequence of
+•	# numbers, utilizing the underlying Unicode encoding .
+•	def main() :
+•	print ( "This program converts a textual message into a sequence ")
+•	print ("of numbers representing the Unicode encoding of the message . \n")
+•	# Get the message to encode
+•	message = input ( "Please enter the message to encode : ")
+•	print ( " \nHere are the Unicode codes : ")
+•	# Loop through the message and print out the Unicode values
+•	for ch in message :
+•	print (ord(ch) , end=" ")
+•	print () # blank line before prompt
+•	main()
+5.5 String Methods
+5.5.1 Programming a Decoder
+•	One change in structure is that the decoding version will collect the characters of the message in a string and print out the entire message at the end of the program. 
+o	To do this, we need to use an accumulator variable. 
+	get the sequence of numbers to decode
+	message = “ ”
+	for each number in the input :
+•	convert the number to the corresponding Unicode character
+•	add the character to the end of message
+	print message
+•	Before the loop, the accumulator variable message is initialized to be an empty string; that is, a string that contains no characters (“ ”).
+•	Each time through the loop, a number from the input is converted into an appropriate character and appended to the end of the message constructed so far
+o	First, we will read the entire sequence of numbers as a single string using input.
+o	Then we will split the big string into a sequence of smaller strings, each of which represents one of the numbers.
+o	Finally, we can iterate through the list of smaller strings, convert each into a number, and use that number to produce the corresponding Unicode character.
+	get the sequence of numbers as a string, inString
+	split inString into a sequence of smaller strings
+	message = “ ”
+	for each of the smaller strings:
+•	change the string of digits into the number it represents
+•	append the Unicode character for that number to message
+	print message
+•	Split method - splits a string into a list of substrings, by splitting the string wherever a space occurs.
+	>>> myString = "Hello, string methods !"
+	>>> myString.split ()
+	['Hello, ' , 'string' , 'methods ! ']
+o	We can also supply the character parameter we wish to split.
+	>>> "32, 24, 25, 57" . split ( ", ")
+	[' 32' ' '24' ' '25' ''57']  
+o	>>> "87 104 97 1 16 32 97 32 83 111 117 1 14 1 12 1 17 1 15 1 15 33" . split 0
+o	['87', '104', '97', '116', '32', '97', '32', '83', '111', '117', '1 14', '1 12', '117', '1 15', '1 15', '33']
+•	The result is not a list of numbers, but a list of strings. 
+o	83 116 114 105 110 103 115 32 97 114 101 32 70 117 110 33
+5.5.2 More Sting Methods
+ 
+5.6 Lists Have Methods, Too
+•	The append method can be used to add an item at the end of a list.
+o	This is often used to build a list one item at a time.
+	squares = []
+	for x in range(1 , 101):
+•	squares . append(x*x)
+o	is similar too
+	message = message + chr (codeNum)
+•	The message can be accumulated as a list of characters where each new character is appended to the end of the existing list. Remember, lists are mutable, so adding at the end of the list changes the list "in place," without having to copy the existing contents over to a new object.
+5.7 From Encoding to Encryption
+•	Our simple encoding decoding programs use a very weak form of encryption known as a substitution cipher. 
+o	Each character of the original message, called the plaintext, is replaced by a corresponding symbol (in our case a number) from a cipher alphabet. 
+o	The resulting code is called the ciphertext.
+•	Modern approaches to encryption start by translating a message into numbers, much like our encoding program. 
+o	Then sophisticated mathematical algorithms are employed to transform these numbers into other numbers. 
+	The transformation is based on combining the message with some other special value called the key
+•	Encryption approaches come in two flavors: private key and public key.
+o	Private key (also called shared key) system, the same key is used for encrypting and decrypting messages.
+	All parties that wish to communicate need to know the key, but it must be kept secret from the outside world.
+o	Public key systems, there are separate but related keys for encrypting and decrypting. 
+	Knowing the encryption key does not allow you to decrypt messages or discover the decryption key
+	the encryption key can be made publicly available, while the decryption key is kept private.
+	Anyone can safely send a message using the public key for encryption.
+	Only the party holding the decryption key will be able to decipher it
+5.8 Input/Output as String Manipulation
+•	Some of the information (e.g., dates) must be entered as strings.
+5.8.1 Example Application: Date Conversion
+•	The user will input a date such as "05/24/2020," and the program will display the date as "May 24, 2020." 
+o	Here is the algorithm for our program:
+o	Input the date in mm/dd/yyyy format (dateStr)
+o	Split dateStr into month, day and year strings
+o	Convert the month string into a month number
+o	Use the month number to look up the month name
+o	Create a new date string in form Month Day, Year
+o	Output the new date string
+•	dateStr = input ( "Enter a date (mm/dd/yyyy) : ")
+•	monthStr, dayStr , yearStr = dateStr.split ( "/")
+o	Here I have gotten the date as a string and split it at the slashes. 
+	I then "unpacked" the list of three strings into the variables monthStr, dayStr, and yearStr using simultaneous assignment.
+o	The next step is to convert monthStr into an appropriate number (using int again) and then use this value to look up the correct month name.
+
+
 

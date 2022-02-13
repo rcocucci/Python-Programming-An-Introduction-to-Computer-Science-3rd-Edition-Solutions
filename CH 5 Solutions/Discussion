@@ -1,0 +1,36 @@
+
+1.Given the initial statements:
+  s1 = "spam"
+  s2 = "ni!"
+  Show the result of evaluating each of the following string expressions. 
+  a) "The Knights who say, " + s2
+    The Knights who say, ni!
+  b) 3 * s1 + 2 * s2
+    spamspamspamni!ni!
+  c) s1[1]
+    p
+  d) s1[1:3]
+    pa
+      while [1:3] only includes 1 and 2
+      spam 
+      0123
+  e) s1[2] + s2[:2]
+    ani
+  f) s1 + s2[-1]
+    spam!
+  g) s1.upper()
+    SPAM
+  h) s2.upper().ljust(4) * 3 
+    NI! NI! NI!
+      the width provides a space between them
+2.Given the same initial statements as in the previous problem, show a
+  Python expression that could construct each of the following results by
+  performing string operations on s1 and s2.
+  a) "NI"
+  b) "ni ! spamni !"
+  c) "Spam Ni ! Spam N. 1 I . Spam Ni !"
+  d) "spam"
+  e) ["sp" , "m"]
+  f) "spm" 
+      
+Answers:

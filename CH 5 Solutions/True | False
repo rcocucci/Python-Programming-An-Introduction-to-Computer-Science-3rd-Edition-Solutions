@@ -1,0 +1,22 @@
+A Python string literal is always enclosed in double quotes. 
+The last character of a strings is at position len(s) -1.
+A string always contains a single line of text.
+In Python "4" + "5" is "45".
+Python lists are mutable, but strings are not.
+ASCII is a standard for representing characters using numeric codes.
+The split method breaks a string into a list of substrings, and join does the opposite.
+A substitution cipher is a good way to keep sensitive information secure.
+The add method can be used to add an item to the end of a list.
+The process of associating a file with an object in a program is called "reading" the file. 
+
+Answers:
+1. False
+2. True
+3. False
+4. True
+5. True
+6. True
+7. True
+8. False
+9. False the append method
+10. False

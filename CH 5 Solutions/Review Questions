@@ -1,6 +1,0 @@
-1. A Python string literal is always enclosed in double quotes.
-2. The last character of a string s is at position len(s) -1.
-
-1. False
-2. 
-

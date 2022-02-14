@@ -5,21 +5,28 @@
   Show the result of evaluating each of the following string expressions. 
   a) "The Knights who say, " + s2
     The Knights who say, ni!
+  
   b) 3 * s1 + 2 * s2
     spamspamspamni!ni!
+  
   c) s1[1]
     p
+  
   d) s1[1:3]
     pa
       while [1:3] only includes 1 and 2
       spam 
       0123
+  
   e) s1[2] + s2[:2]
     ani
+  
   f) s1 + s2[-1]
     spam!
+  
   g) s1.upper()
     SPAM
+  
   h) s2.upper().ljust(4) * 3 
     NI! NI! NI!
       the width provides a space between them
@@ -27,16 +34,22 @@
 2.Given the same initial statements as in the previous problem, show a
   Python expression that could construct each of the following results by
   performing string operations on s1 and s2.
+  
   a) "NI"
     s2[:2].upper()
+  
   b) "ni!spamni!"
     s2 + s1 + s2
+  
   c) "Spam Ni! Spam Ni! Spam Ni!"
       (s1.title().ljust(4) + " " + s2.title().ljust(4))* 3
+  
   d) "spam"
     s1
+  
   e) ["sp" , "m"]
     s1.split("a")
+  
   f) "spm" 
     s1[:2] + s1[3]
     
@@ -84,4 +97,21 @@
      
      tfdsfu
       
+      
+4.Show the string that would result from each of the following string formatting operations. If the operation is not legal, explain why.
+  a) "Looks like {1} and {0} for breakfast " . format ("eggs" , "spam")
+  b) "There is {0} {1} {2} {3}" . format (! , " spam" , 4, "you" )
+  c) "Hello {0}" . format ("Susan" , "Computewell")
+  d) " {0:0.2f} {0 :0.2f}" . format (2 . 3, 2 . 3468)
+  e) " {7 . 5f} {7 . 5f}" . format (2 . 3, 2 . 3468)
+  f) "Time left {0 : 02}:{1 : 05.2f}" . format ( 1 , 37 . 374)
+  g) " {1:3}" . format("14") 
+
+5.Explain why public key encryption is more useful for securing communications on the Internet than private (shared) key encryption. 
+
+  Private keys use the same key to both encrypt and decrypt communications before sending and after receiving. This increases the probability of malicious use. 
+  Public keys entail a public key to encrypt communciations before sending. However, the communications can only be decrypted with another key that is specific to the recipient.
+
+
+
 Answers:

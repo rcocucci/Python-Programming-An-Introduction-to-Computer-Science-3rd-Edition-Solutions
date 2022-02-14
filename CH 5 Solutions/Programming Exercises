@@ -1,12 +1,11 @@
-#1. As discussed in the chapter, string formatting could be used to simplify the dateconvert2 . py program. 
-#   Go back and redo this program making use of the string-formatting method. 
-   
-   #use the string formatting method
+# 1. As discussed in the chapter, string formatting could be used to simplify the dateconvert2 . py program. 
+#    Go back and redo this program making use of the string-formatting method. 
+         
 def main():
-    date = input("Enter the date (mm/dd/yyyy): ") 
-    month, day, year  = date.split("/") 
-    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    date1 = months[int(month)-1] + " " + day + ", " + year
+   date = input("Enter the date (mm/dd/yyyy): ") 
+   month, day, year  = date.split("/") 
+   months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+   date1 = months[int(month)-1] + " " + day + ", " + year
 
-    print("The day is {0} or {1}.".format(date1, date))
+   print("The day is {0} or {1}.".format(date1, date))
 main()

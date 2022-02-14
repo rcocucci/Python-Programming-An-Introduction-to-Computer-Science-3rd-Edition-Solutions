@@ -1,32 +1,56 @@
-1. Accessing a single character out of a string is called:
-  a) slicing b) concatenation c) assignment d) indexing
-2. Which of the following is the same as s[0:-1]?
-  a) s [-1] b) s[:] c) s[:len(s)-1] d) s[O:len(s)]
-3. What function gives the Unicode value of a character?
-  a) ord b) ascii c) chr d) eval
-4. Which of the following can not be used to convert a string of digits into a number?
-  a) int b) float c) str d) eval
-5. A successor to ASCII that includes characters from (nearly) all written languages is
-  a) TELLI b) ASCII++ c) Unicode d) ISO
-6. Which string method converts all the characters of a string to upper case?
-  a) capitalize b) capwords c) uppercase d) upper
-7. The string "slots" that are filled in by the format method are marked by:
-  a) % b) $ c) [] d) {}
-8. Which of the following is not a file-reading method in Python?
-  a) read b) readline c) readall d) readlines
-9. The term for a program that does its input and output with files is
-  a) file-oriented b) multi-line c) batch d) lame
-10. Before reading or writing to a file, a file object must be created via
-  a) open b) create c) File d) Folder 
-  
-Answers:
-1. Indexing
-2. s[:len(s)-1] len tells how many characters are in a string. 
-3. ord
-4. str is used to turn a number into a string
-5. Unicode
-6. Upper
-7. {}
-8. readall
-9. batch
-10. open
+#### "Python Programming: An Introduction to Computer Science, Third Edition" by John Zelle
+### Chapter 5
+## Multiple Choice
+
+# 1. Accessing a single character out of a string is called:
+#   a) slicing b) concatenation c) assignment d) indexing
+
+# 2. Which of the following is the same as s[0:-1]?
+#   a) s [-1] b) s[:] c) s[:len(s)-1] d) s[O:len(s)]
+
+# 3. What function gives the Unicode value of a character?
+#   a) ord b) ascii c) chr d) eval
+
+# 4. Which of the following can not be used to convert a string of digits into a number?
+#   a) int b) float c) str d) eval
+
+# 5. A successor to ASCII that includes characters from (nearly) all written languages is
+#   a) TELLI b) ASCII++ c) Unicode d) ISO
+
+# 6. Which string method converts all the characters of a string to upper case?
+#   a) capitalize b) capwords c) uppercase d) upper
+
+# 7. The string "slots" that are filled in by the format method are marked by:
+#   a) % b) $ c) [] d) {}
+
+# 8. Which of the following is not a file-reading method in Python?
+#   a) read b) readline c) readall d) readlines
+
+# 9. The term for a program that does its input and output with files is
+#   a) file-oriented b) multi-line c) batch d) lame
+
+# 10. Before reading or writing to a file, a file object must be created via
+#   a) open b) create c) File d) Folder 
+   
+
+# Answers:
+
+# 1. Indexing
+
+# 2. s[:len(s)-1] len tells how many characters are in a string. 
+
+# 3. ord
+
+# 4. str is used to turn a number into a string
+
+# 5. Unicode
+
+# 6. Upper
+
+# 7. {}
+
+# 8. readall
+
+# 9. batch
+
+# 10. open
